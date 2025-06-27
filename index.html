@@ -91,9 +91,6 @@
       padding: 60px 20px;
       max-width: 1000px;
       margin: auto;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 1s ease forwards;
     }
 
     h2 {
@@ -132,28 +129,24 @@
       background: var(--bg);
       color: var(--text-muted);
     }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: none;
-      }
-    }
   </style>
   <script>
     window.onload = () => {
-      const toggle = document.getElementById('Light/Dark');
-      toggle.onclick = () => document.body.classList.toggle('light');
+      const toggle = document.getElementById('theme-toggle');
+      toggle.onclick = () => {
+        document.body.classList.toggle('light');
+        toggle.textContent = document.body.classList.contains('light') ? 'Dark' : 'Light';
+      };
     };
   </script>
 </head>
 <body>
   <header>
-    <button id="Light/Dark" class="Light/Dark">Toggle Theme</button>
     <img src="profile.jpg" alt="Profile Picture" class="profile-pic" />
     <h1>Chakradhara Rao Kotturu</h1>
     <p>Cybersecurity Enthusiast | Developer | DevSecOps Learner</p>
-    <a href="resume.pdf" class="btn" target="_blank">Download Resume</a>
+    <a href="resume.pdf" class="btn" download>Download Resume</a>
+    <button id="theme-toggle" class="theme-toggle">Light</button>
   </header>
 
   <section id="about">
