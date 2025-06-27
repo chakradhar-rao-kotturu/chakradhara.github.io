@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chakradhara Rao Kotturu | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --fg: #e2e8f0;
+      --accent: #38bdf8;
+      --secondary: #1e293b;
+      --text-muted: #94a3b8;
+      --link: #60a5fa;
+      --highlight: #3b82f6;
+    }
+
+    body.light {
+      --bg: #ffffff;
+      --fg: #1e293b;
+      --accent: #2563eb;
+      --secondary: #f1f5f9;
+      --text-muted: #64748b;
+      --link: #1d4ed8;
+      --highlight: #3b82f6;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background: var(--secondary);
+      text-align: center;
+      padding: 60px 20px 30px;
+      position: relative;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 3px solid var(--accent);
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: var(--text-muted);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: var(--highlight);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--link);
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      color: var(--fg);
+      border: 2px solid var(--fg);
+      padding: 6px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    h2 {
+      color: var(--accent);
+      border-bottom: 2px solid var(--secondary);
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .project, .skill, .experience-item, .education-item {
+      background: var(--secondary);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .project h3, .skill h3, .experience-item h3, .education-item h3 {
+      margin-top: 0;
+      color: var(--link);
+    }
+
+    .project a {
+      display: inline-block;
+      margin-top: 10px;
+      color: var(--accent);
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: var(--bg);
+      color: var(--text-muted);
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+  <script>
+    window.onload = () => {
+      const toggle = document.getElementById('Light/Dark');
+      toggle.onclick = () => document.body.classList.toggle('light');
+    };
+  </script>
+</head>
+<body>
+  <header>
+    <button id="theme-toggle" class="theme-toggle">Toggle Theme</button>
+    <img src="assets/profile.jpg" alt="Profile Picture" class="profile-pic" />
+    <h1>Chakradhara Rao Kotturu</h1>
+    <p>Cybersecurity Enthusiast | Developer | DevSecOps Learner</p>
+    <a href="assets/resume.pdf" class="btn" target="_blank">Download Resume</a>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="experience-item">
+      <p>I'm a graduate student passionate about cybersecurity, software development, and building secure systems. I enjoy automating tasks, exploring ethical hacking, and solving problems through clean code and modern tools.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skill">
+      <h3>Languages & Tools</h3>
+      <p>Python, Bash, C++, SQL, Git, Docker, Azure, AWS, Nmap, Wireshark, Burp Suite, Linux, Windows Server</p>
+    </div>
+    <div class="skill">
+      <h3>Domains</h3>
+      <p>Network Security, Penetration Testing, Vulnerability Assessment, Incident Response, DevSecOps</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Intrusion Detection System with ML</h3>
+      <p>Python-based ML model for detecting threats with 86% accuracy. Built using Scikit-learn and visualized alerts via a custom dashboard.</p>
+      <a href="https://github.com/yourusername/ids-ml" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project">
+      <h3>Advanced E-commerce Web App</h3>
+      <p>Full-stack e-commerce platform with Flask and MySQL. Includes secure user auth, order management, and role-based access.</p>
+      <a href="https://github.com/yourusername/ecommerce-app" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project">
+      <h3>Cryptography using PKI</h3>
+      <p>Implemented secure message exchange with PKI. Used OpenSSL to manage certificates and verify digital signatures.</p>
+      <a href="https://github.com/yourusername/pki-crypto" target="_blank">View on GitHub</a>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="education-item">
+      <h3>New York Institute of Technology, Vancouver</h3>
+      <p>Master’s in Cybersecurity (Expected 2026)</p>
+    </div>
+    <div class="education-item">
+      <h3>Swami Vivekananda Institute of Technology, Hyderabad</h3>
+      <p>B.Tech. in Electronics & Communication Engineering (2023)</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:kotturuchakradharao@gmail.com">kotturuchakradharao@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/chakradhara-rao-kotturu" target="_blank">chakradhara-rao-kotturu</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Chakradhara Rao Kotturu. All rights reserved.</p>
+  </footer>
+</body>
+</html>
